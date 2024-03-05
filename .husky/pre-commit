@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-terraform -chdir=src fmt -check
 terraform -chdir=src validate
+terraform -chdir=src fmt -check --diff
+tflint --chdir=src
