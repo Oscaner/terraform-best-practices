@@ -2,5 +2,5 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 terraform -chdir=src validate
-terraform -chdir=src fmt -check --diff
+terraform -chdir=src fmt -check --diff -recursive
 tflint --chdir=src
